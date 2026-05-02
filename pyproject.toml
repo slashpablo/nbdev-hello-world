@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nbdev-hello-world"
+dynamic = ["version"]
+description = "Experimenting with nbdev"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Pablo Munoz Haro", email = "pablomuha@outlook.com"}]
+keywords = ['nbdev']
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/slashpablo/nbdev-hello-world"
+Documentation = "https://slashpablo.github.io/nbdev-hello-world/"
+
+[project.entry-points.nbdev]
+nbdev_hello_world = "nbdev_hello_world._modidx:d"
+
+[tool.setuptools.dynamic]
+version = {attr = "nbdev_hello_world.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["nbdev_hello_world"]
+
+[tool.nbdev]
